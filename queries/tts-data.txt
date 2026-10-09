@@ -1,0 +1,7 @@
+--Connectio chain
+DSN=AR System ODBC Data Source 2;ARServer=10.1.2.5;ARServerPort=48000;UID=DB_TTS_ODBC;PWD=PASS;ARAuthentication=;ARNameReplace=1;SERVER=NotTheServer
+
+--TTs query
+SELECT "TTS:Help Desk".Description, "TTS:Help Desk".Assignee, "TTS:Help Desk"."Assigned Group", "TTS:Help Desk"."Incident Number", "TTS:Help Desk"."Submit Date", "TTS:Help Desk".Status, "TTS:Help Desk".Urgency, "TTS:Help Desk"."Categorization Tier 1"FROM "TTS:Help Desk" "TTS:Help Desk"
+WHERE ("TTS:Help Desk".Status='Assigned') AND ("TTS:Help Desk".Urgency='1-Critical') AND ("TTS:Help Desk"."Categorization Tier 1"='DEGRADACION DE CALIDAD') OR ("TTS:Help Desk".Status='In Progress') AND ("TTS:Help Desk".Urgency='1-Critical') AND ("TTS:Help Desk"."Categorization Tier 1"='DEGRADACION DE CALIDAD') OR ("TTS:Help Desk".Status='Pending') AND ("TTS:Help Desk".Urgency='1-Critical') AND ("TTS:Help Desk"."Categorization Tier 1"='DEGRADACION DE CALIDAD')
+ORDER BY "TTS:Help Desk"."Incident Number"
